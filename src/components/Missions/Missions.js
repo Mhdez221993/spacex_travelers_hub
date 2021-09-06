@@ -1,5 +1,12 @@
 import React from 'react';
 
-const Missions = () => <div>Missions page under construction</div>;
+const Missions = () => (
+  <container>
+  <table>
+    <thead></thead>
+  </table>
+  </container>
+  
+);
 
 export default Missions;
