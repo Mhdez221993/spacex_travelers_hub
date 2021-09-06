@@ -6,4 +6,17 @@ const getDragons = () => axios.get(`${urlDragons}`).then((results) =>{
  if (results.status === 200) {
   const { data } = results;
   data.forEach((item) => {
-  }
+   const dragon = {
+    rocket_id: item.id,
+    rocket_name: item.name,
+    flickr_images: item.flickr_images,
+    description: item.description,
+    type: item.type,
+   };
+   dragons.push(dragon);
+  });
+ }
+ return dragons;
+});
+
+export default { getDragons}
