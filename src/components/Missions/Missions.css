@@ -1,7 +1,4 @@
 .bg-container {
-  color: #fff;
-margin-right: auto;
-    margin-left: auto;    
+  color: #fff;    
     background-image: url('./rockect.jpg');
-    background-repeat: no-repeat;
 }

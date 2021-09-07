@@ -21,33 +21,34 @@ const Missions = () => {
   }, []);
 
   return (
-    <Container className="bg-container">
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>{'  '}</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div className="bg-container">
+      <Container>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Mission</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>{'  '}</th>
+            </tr>
+          </thead>
+          <tbody>
 
-          {missions && missions.length > 0 && missions.map(({
-            id,
-            missionName,
-            missionDescription,
-            reserved,
-          }) => (
-            <tr key={id}>
-              <td><p className="fw-bold">{missionName}</p></td>
-              <td><p>{missionDescription}</p></td>
-              <td className="align-middle">
-                {reserved && <Badge bg="info">ACTIVE MEMBER</Badge>}
-                {!reserved && <Badge bg="secondary">NOT A MEMBER</Badge>}
-              </td>
-              <td className="col-2 align-middle text-center">
-                {reserved
+            {missions && missions.length > 0 && missions.map(({
+              id,
+              missionName,
+              missionDescription,
+              reserved,
+            }) => (
+              <tr key={id}>
+                <td><p className="fw-bold">{missionName}</p></td>
+                <td><p>{missionDescription}</p></td>
+                <td className="align-middle">
+                  {reserved && <Badge bg="info">ACTIVE MEMBER</Badge>}
+                  {!reserved && <Badge bg="secondary">NOT A MEMBER</Badge>}
+                </td>
+                <td className="col-2 align-middle text-center">
+                  {reserved
                   && (
                   <Button
                     size="sm"
@@ -57,7 +58,7 @@ const Missions = () => {
                     Leave Mission
                   </Button>
                   )}
-                {!reserved
+                  {!reserved
                   && (
                   <Button
                     size="sm"
@@ -67,12 +68,13 @@ const Missions = () => {
                     Join Mission
                   </Button>
                   )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Container>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Container>
+    </div>
   );
 };
 
