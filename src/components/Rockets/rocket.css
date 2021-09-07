@@ -29,7 +29,6 @@ button {
 .rocket-info {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
   padding: 10px;
   align-items: flex-start;
 }
