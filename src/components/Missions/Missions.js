@@ -1,45 +1,77 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import Button from 'react-bootstrap/Button';
-import getMissions from '../../API/missions';
+import {
+  Container, Button, Badge, Table,
+} from 'react-bootstrap';
+import getMissions, {
+  joinMission,
+  exitMission,
+} from '../../API/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector(({ missionsReducer }) => missionsReducer.missions);
+  const missions = useSelector(({ missionsReducer }) => missionsReducer);
 
   useEffect(() => {
-    (async () => {
-      await dispatch(getMissions());
-    })();
+    if (!missions.length) {
+      dispatch(getMissions());
+    }
   }, []);
 
   return (
-    <container>
-      <table>
+    <Container>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Mission</th>
             <th>Description</th>
             <th>Status</th>
-            <th>{' '}</th>
+            <th>{'  '}</th>
           </tr>
         </thead>
         <tbody>
-          {
-            missions && missions.map(mission => (
-              <tr key={mission.id}>
-                <td>
-                  {mission.mission_name}
-                </td>
-                <td>
-                  {mission.description}
-                </td>
-              </tr>
-            ))
-          }
+
+          {missions && missions.length > 0 && missions.map(({
+            id,
+            missionName,
+            missionDescription,
+            reserved,
+          }) => (
+            <tr key={id}>
+              <td><p className="fw-bold">{missionName}</p></td>
+              <td><p>{missionDescription}</p></td>
+              <td className="align-middle">
+                {reserved && <Badge bg="info">ACTIVE MEMBER</Badge>}
+                {!reserved && <Badge bg="secondary">NOT A MEMBER</Badge>}
+              </td>
+              <td className="col-2 align-middle text-center">
+                {reserved
+                  && (
+                  <Button
+                    size="sm"
+                    variant="danger"
+                    onClick={() => dispatch(exitMission(id))}
+                  >
+                    Leave Mission
+                  </Button>
+                  )}
+                {!reserved
+                  && (
+                  <Button
+                    size="sm"
+                    variant="outline-success"
+                    onClick={() => dispatch(joinMission(id))}
+                  >
+                    Join Mission
+                  </Button>
+                  )}
+              </td>
+            </tr>
+          ))}
         </tbody>
-      </table>
-    </container>
+      </Table>
+    </Container>
   );
 };
 

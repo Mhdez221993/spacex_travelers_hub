@@ -1,36 +1,37 @@
 import {
-  GET_MISSIONS_REQUEST,
   GET_MISSIONS_SUCCESS,
-  GET_MISSIONS_FAILURE,
+  JOIN_MISSION,
+  EXIT_MISSION,
 } from '../API/missions';
 
-const initialState = {
-  isLoading: false,
-  missions: [],
-  error: '',
-};
-
-const missionsReducer = (state = initialState, action) => {
+const missionsReducer = (state = [], action) => {
   switch (action.type) {
-    case GET_MISSIONS_REQUEST:
-      return {
-        ...state,
-        isLoading: true,
-      };
-
     case GET_MISSIONS_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        missions: action.payload,
-      };
+      return action.payload;
 
-    case GET_MISSIONS_FAILURE:
-      return {
-        ...state,
-        isLoading: false,
-        error: action.payload,
-      };
+    case JOIN_MISSION:
+      return state.map(mission => {
+        if (mission.id !== action.id) {
+          return mission;
+        }
+
+        return {
+          ...mission,
+          reserved: true,
+        };
+      });
+
+    case EXIT_MISSION:
+      return state.map(mission => {
+        if (mission.id !== action.id) {
+          return mission;
+        }
+
+        return {
+          ...mission,
+          reserved: false,
+        };
+      });
 
     default:
       return state;
