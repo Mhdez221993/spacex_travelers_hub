@@ -8,6 +8,7 @@ import getMissions, {
   joinMission,
   exitMission,
 } from '../../API/missions';
+import './Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Missions = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="bg-container">
       <Table striped bordered hover>
         <thead>
           <tr>
