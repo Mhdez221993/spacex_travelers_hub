@@ -8,7 +8,7 @@ const Nav = () => {
       id: 1,
       path: '/',
       text:
-  <span className="nav-title" useRef={logo}>
+  <span className="nav-title">
     {' '}
     <img src={logo} className="App-logo" alt="logo" />
     Space Travelers Hub
