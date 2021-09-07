@@ -21,8 +21,8 @@ const Missions = () => {
   }, []);
 
   return (
-    <div className="bg-container">
-      <Container>
+    <div>
+      <Container className="bg-container">
         <Table striped bordered hover>
           <thead>
             <tr>
