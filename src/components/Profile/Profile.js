@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container, Table, Badge } from 'react-bootstrap';
 
 const Profile = () => (
   <div>
@@ -7,8 +7,8 @@ const Profile = () => (
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>My Missions</th>
-            <th>My Rockets</th>
+            <th><Badge bg="primary">My Missions</Badge></th>
+            <th><Badge bg="primary">My Rockets</Badge></th>
             <th>{'  '}</th>
           </tr>
         </thead>
@@ -26,12 +26,12 @@ const Profile = () => (
           </tr>
           <tr>
             <td><p>AsiaSat</p></td>
-            <td><p>missionDescription</p></td>
+            <td><p>Starship</p></td>
             <td />
           </tr>
           <tr>
-            <td><p>Telstar</p></td>
-            <td><p>missionDescription</p></td>
+            <td><p>ABS</p></td>
+            <td />
             <td />
           </tr>
 
