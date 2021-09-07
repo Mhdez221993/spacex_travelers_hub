@@ -17,3 +17,17 @@ function Dragons(props) {
      setDragonsDisplay(dragons);
    }
  });
+
+ const layout = (
+  <div className="rockets">
+    <Displayer target="dragons" rockets={dragonsDisplay} />
+  </div>
+);
+return layout;
+}
+
+const mapStateToProps = (state) => ({
+dragons: state.dragonsReducer.dragons,
+});
+
+export default connect(mapStateToProps, { store, getDragons })(Dragons);
