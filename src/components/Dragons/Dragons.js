@@ -1,4 +1,4 @@
-
+// eslint-disable import/no-extraneous-dependencies
 import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,19 +7,19 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDragons, bookDragon, cancelBooking } from '../../redux/dragons/dragons';
+import { fetchDragons, bookDragon, cancelBooking } from '../../redux/dragons ';
 
 const Dragons = () => {
   const dispatch = useDispatch();
-  const dragons = useSelector((state) => state.dragons);
+  const dragons = useSelector(state => state.dragonsReducer);
 
   useEffect(() => {
     if (!dragons.length) {
       dispatch(fetchDragons);
     }
   }, []);
-  const handleBooking = (id) => dispatch(bookDragon(id));
-  const handleCancellation = (id) => dispatch(cancelBooking(id));
+  const handleBooking = id => dispatch(bookDragon(id));
+  const handleCancellation = id => dispatch(cancelBooking(id));
   return (
     <Container>
       {dragons.map(({

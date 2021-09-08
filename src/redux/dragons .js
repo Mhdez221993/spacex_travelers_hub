@@ -3,26 +3,26 @@ const LOAD_DRAGONS = 'dragons/load';
 const BOOK_DRAGON = 'dragons/book';
 const CANCEL_BOOKING = 'dragons/cancel-booking';
 
-const loadDragons = (payload) => ({
+const loadDragons = payload => ({
   type: LOAD_DRAGONS,
   payload,
 });
 
-export const bookDragon = (id) => ({
+export const bookDragon = id => ({
   type: BOOK_DRAGON,
   id,
 });
 
-export const cancelBooking = (id) => ({
+export const cancelBooking = id => ({
   type: CANCEL_BOOKING,
   id,
 });
 
-export const fetchDragons = async (dispatch) => {
+export const fetchDragons = async dispatch => {
   const response = await fetch(BASE_URL);
   const dragons = await response.json();
 
-  dispatch(loadDragons(dragons.map((dragon) => ({
+  dispatch(loadDragons(dragons.map(dragon => ({
     id: dragon.id,
     name: dragon.name,
     type: dragon.type,
@@ -36,7 +36,7 @@ const reducer = (state = [], action) => {
     case LOAD_DRAGONS:
       return action.payload;
     case BOOK_DRAGON:
-      return state.map((dragon) => {
+      return state.map(dragon => {
         if (dragon.id !== action.id) {
           return dragon;
         }
@@ -47,7 +47,7 @@ const reducer = (state = [], action) => {
         };
       });
     case CANCEL_BOOKING:
-      return state.map((dragon) => {
+      return state.map(dragon => {
         if (dragon.id !== action.id) {
           return dragon;
         }
