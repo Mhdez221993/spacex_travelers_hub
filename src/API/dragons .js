@@ -11,6 +11,7 @@ const getDragons = () => axios.get(`${urlDragons}`).then((results) =>{
    const dragon = {
     rocket_id: item.id,
     rocket_name: item.name,
+    flickr_images: item.flickr_images,
     description: item.description,
     type: item.type,
    };
