@@ -1,33 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import store from '../redux/configureStore';
 
+import { useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchDragons, bookDragon, cancelBooking } from '../../redux/dragons/dragons';
 
-function Dragons(props) {
- const [dragonsDisplay, setDragonsDisplay] = useState(null);
- const [calledDragon, setCalledDragon] = useState(null);
+const Dragons = () => {
+  const dispatch = useDispatch();
+  const dragons = useSelector((state) => state.dragons);
 
- useEffect(() => {
-   const { dragons } = props;
-   if (!calledDragon && dragons.length === 0) {
-     setCalledDragon(true);
-     props.getDragons();
-   }
-   if (dragons !== undefined && dragons !== dragonsDisplay) {
-     setDragonsDisplay(dragons);
-   }
- });
+  useEffect(() => {
+    if (!dragons.length) {
+      dispatch(fetchDragons);
+    }
+  }, []);
+  const handleBooking = (id) => dispatch(bookDragon(id));
+  const handleCancellation = (id) => dispatch(cancelBooking(id));
+  return (
+    <Container>
+      {dragons.map(({
+        id, name, description, images, reserved,
+      }) => (
+        <Row key={id} className="mb-4">
+          <Col xs={4}>
+            <Image src={images[0]} thumbnail />
+          </Col>
+          <Col>
+            <h3>{name}</h3>
+            <p>
+              {reserved && <Badge bg="info">Reserved</Badge>}
+              {description}
+            </p>
+            {reserved && (
+              <Button variant="outline-secondary" onClick={() => handleCancellation(id)}>
+                Cancel reservation
+              </Button>
+            )}
+            {!reserved && (
+              <Button variant="primary" onClick={() => handleBooking(id)}>
+                Reserve dragon
+              </Button>
+            )}
+          </Col>
+        </Row>
+      ))}
+    </Container>
+  );
+};
 
- const layout = (
-  <div className="rockets">
-    <Displayer target="dragons" rockets={dragonsDisplay} />
-  </div>
-);
-return layout;
-}
-
-const mapStateToProps = (state) => ({
-dragons: state.dragonsReducer.dragons,
-});
-
-export default connect(mapStateToProps, { store, getDragons })(Dragons);
+export default Dragons;

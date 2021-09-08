@@ -1,66 +1,65 @@
+const BASE_URL = 'https://api.spacexdata.com/v3/dragons';
+const LOAD_DRAGONS = 'dragons/load';
+const BOOK_DRAGON = 'dragons/book';
+const CANCEL_BOOKING = 'dragons/cancel-booking';
 
-export const RECEIVE_DRAGONS = 'RECEIVE_DRAGONS';
-export const RECEIVE_DRAGON_RESERVE = 'RECEIVE_DRAGON_RESERVE';
-export const RECEIVE_DRAGON_RESERVE_CANCELLATION = 'RECEIVE_DRAGON_RESERVE_CANCELLATION';
+const loadDragons = (payload) => ({
+  type: LOAD_DRAGONS,
+  payload,
+});
 
-const initialState = { dragons: [] };
+export const bookDragon = (id) => ({
+  type: BOOK_DRAGON,
+  id,
+});
 
-const reducer = (state = initialState, action) => {
+export const cancelBooking = (id) => ({
+  type: CANCEL_BOOKING,
+  id,
+});
+
+export const fetchDragons = async (dispatch) => {
+  const response = await fetch(BASE_URL);
+  const dragons = await response.json();
+
+  dispatch(loadDragons(dragons.map((dragon) => ({
+    id: dragon.id,
+    name: dragon.name,
+    type: dragon.type,
+    description: dragon.description,
+    images: dragon.flickr_images,
+  }))));
+};
+
+const reducer = (state = [], action) => {
   switch (action.type) {
-    case RECEIVE_DRAGONS: {
-      return {
-        dragons: action.dragons,
-      };
-    }
-    case RECEIVE_DRAGON_RESERVE: {
-     const { id } = action.reservation;
-     const newDragons = [];
-     const { dragons } = state;
-     if (dragons) {
-       if (dragons.length > 0) {
-         dragons.forEach((d) => {
-           if (d.rocket_id === id) {
-             const dragons = { ...d, reserved: true };
-             newDragons.push(dragons);
-           } else {
-             newDragons.push(d);
-           }
-         });
-       }
-     }
-     return {
-       dragons: newDragons,
-     };
-   }
-   case RECEIVE_DRAGON_RESERVE_CANCELLATION: {
-     const { id } = action.reservation;
-     const newDragons = [];
-     const { dragons } = state;
-     if (dragons) {
-       if (dragons.length > 0) {
-         dragons.forEach((r) => {
-           if (r.rocket_id === id) {
-             const {
-               // eslint-disable-next-line camelcase
-               rocket_id, flickr_images, rocket_name, description,
-             } = r;
-             const dragon = {
-               rocket_id, flickr_images, rocket_name, description,
-             };
-             newDragons.push(dragon);
-           } else {
-             newDragons.push(r);
-           }
-         });
-       }
-     }
-     return {
-       dragons: newDragons,
-     };
-   }
-   default:
-     return state;
- }
+    case LOAD_DRAGONS:
+      return action.payload;
+    case BOOK_DRAGON:
+      return state.map((dragon) => {
+        if (dragon.id !== action.id) {
+          return dragon;
+        }
+
+        return {
+          ...dragon,
+          reserved: true,
+        };
+      });
+    case CANCEL_BOOKING:
+      return state.map((dragon) => {
+        if (dragon.id !== action.id) {
+          return dragon;
+        }
+
+        return {
+          ...dragon,
+          reserved: false,
+        };
+      });
+    default:
+      return state;
+  }
 };
 
 export default reducer;
