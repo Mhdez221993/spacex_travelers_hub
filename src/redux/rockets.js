@@ -44,8 +44,13 @@ const reducer = (state = initialState, action) => {
     }
     case SET_RESERVATION:
       return state.map(rocket => {
-        if (rocket.id !== action.payload) return rocket;
-        return { ...rocket, reserved: true };
+        if (rocket.id !== action.payload) {
+          return rocket;
+        }
+        return {
+          ...rocket,
+          reserved: true,
+        };
       });
     case CANLCEL_RESERVATION:
       return state.map(rocket => {

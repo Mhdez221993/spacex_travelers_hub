@@ -6,7 +6,7 @@ import './rocket.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector(state => state.rocketsReducer);
+  const rockets = useSelector(state => state.rockets);
 
   useEffect(
     () => {

@@ -12,7 +12,7 @@ import './Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector(({ missionsReducer }) => missionsReducer);
+  const missions = useSelector(({ missions }) => missions);
 
   useEffect(() => {
     if (!missions.length) {

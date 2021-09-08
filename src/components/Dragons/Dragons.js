@@ -11,7 +11,7 @@ import { fetchDragons, bookDragon, cancelBooking } from '../../redux/dragons ';
 
 const Dragons = () => {
   const dispatch = useDispatch();
-  const dragons = useSelector(state => state.dragonsReducer);
+  const dragons = useSelector(state => state.dragons);
 
   useEffect(() => {
     if (!dragons.length) {
