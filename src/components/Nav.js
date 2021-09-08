@@ -8,7 +8,6 @@ const Nav = () => {
       id: 1,
       path: '/',
       text:
-  <span className="nav-title">
   <div className="nav-brand">
     {' '}
     <img src={logo} className="App-logo" alt="logo" />
