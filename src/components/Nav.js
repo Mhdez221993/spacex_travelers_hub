@@ -9,10 +9,11 @@ const Nav = () => {
       path: '/',
       text:
   <span className="nav-title">
+  <div className="nav-brand">
     {' '}
     <img src={logo} className="App-logo" alt="logo" />
-    Space Travelers Hub
-  </span>,
+    <span className="brand-name">Space Travelers&apos; Hub</span>
+  </div>,
     },
     {
       id: 2,
