@@ -8,11 +8,11 @@ const Nav = () => {
       id: 1,
       path: '/',
       text:
-  <span className="nav-title" useRef={logo}>
+  <div className="nav-brand">
     {' '}
     <img src={logo} className="App-logo" alt="logo" />
-    Space Travelers Hub
-  </span>,
+    <span className="brand-name">Space Travelers&apos; Hub</span>
+  </div>,
     },
     {
       id: 2,
