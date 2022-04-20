@@ -1,5 +1,7 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
+
 # spacex-travelers-hub
+
 The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
 
 * Rockets /Dragons
@@ -11,17 +13,21 @@ The Missions section displays a list of current missions along with their brief 
 My Profile
 The My Profile section displays all reserved rockets and space missions.
 
-![screeshoot](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/images/space-travelers__rockets.png)
+![screeshoot](./space_traveler1.PNG)
+
+## Live Demo
+
+[Go Live](https://magical-taffy-2adbc3.netlify.app/)
 
 ## Built With
-- JavaScript
-- React
-- Redux
-- Webpack
-- HTML/SCSS
-- Node.JS
-- Jest
 
+* JavaScript
+
+* React
+* Redux
+* Webpack
+* HTML/SCSS
+* Jest
 
 ## Getting Started
 
@@ -34,9 +40,7 @@ npm start
 
 ## Available Scripts
 
-
 In the project directory, you can run:
-
 
 ### `npm test`
 
@@ -59,7 +63,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
@@ -72,14 +75,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 npx eslint .
 npx stylelint "**/*.{css,scss}"
 ```
-- Autofix linters errors
+
+* Autofix linters errors
 
 ```cmd
 npx eslint . --fix
 npx stylelint "**/*.{css,scss}" --fix
 ```
 
-- you can install it locally
+* you can install it locally
 
 ```cmd
 npm install --save-dev eslint@7.11.x eslint-config-airbnb@18.1.x eslint-plugin-import@2.22.x eslint-plugin-jsx-a11y@6.2.x eslint-plugin-react@7.20.x eslint-plugin-react-hooks@2.5.x babel-eslint@10.1.x
@@ -89,25 +93,21 @@ npm install --save-dev stylelint@13.3.x stylelint-scss@3.17.x stylelint-config-s
 
 👤 **Moises Hernandez Coronado**
 
-- GitHub: [@Mhdez221993](https://github.com/Mhdez221993)
-- Twitter: [@MoisesH42060050](https://twitter.com/MoisesH42060050)
-- LinkedIn: [Moises Hernandez Coronado](https://www.linkedin.com/in/moises-hernandez-9bbb17145/)
-
+* GitHub: [@Mhdez221993](https://github.com/Mhdez221993)
+* Twitter: [@MoisesH42060050](https://twitter.com/MoisesH42060050)
+* LinkedIn: [Moises Hernandez Coronado](https://www.linkedin.com/in/moises-hernandez-9bbb17145/)
 
 👤 **Tendai Nyandoro**
 
-- GitHub: [@Tendai Nyandoro](https://github.com/tnyandoro)
-- Twitter: [@tendainyandoro](https://twitter.com/tendainyandoro)
-- LinkedIn: [Tendai Nyandoro](https://www.linkedin.com/in/tendai-nyandoro/)
-
+* GitHub: [@Tendai Nyandoro](https://github.com/tnyandoro)
+* Twitter: [@tendainyandoro](https://twitter.com/tendainyandoro)
+* LinkedIn: [Tendai Nyandoro](https://www.linkedin.com/in/tendai-nyandoro/)
 
 *Tshepo David**
 
-- GitHub: [@githubhandle](https://github.com/TSHEPO-CLOUD)
-- Twitter: [LinkedIn](https://twitter.com/tshepomolefem)
-- LinkedIn:[tshepo-david-molefe](https://www.linkedin.com/in/tshepo-david-molefe/)
-
-
+* GitHub: [@githubhandle](https://github.com/TSHEPO-CLOUD)
+* Twitter: [LinkedIn](https://twitter.com/tshepomolefem)
+* LinkedIn:[tshepo-david-molefe](https://www.linkedin.com/in/tshepo-david-molefe/)
 
 =======
 
@@ -126,7 +126,8 @@ Give a ⭐️ if you like this project!
 =======
 
 ## Acknowledgments
-- Microverse for giving me this chance
-- To my Stand Up Team and coding partners who kept my morale up!
-- The amazing code reviewers for making me improve every day :thumbsup:
 
+* Microverse for giving me this chance
+
+* To my Stand Up Team and coding partners who kept my morale up!
+* The amazing code reviewers for making me improve every day :thumbsup:
