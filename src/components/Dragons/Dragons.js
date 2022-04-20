@@ -1,13 +1,13 @@
 // eslint-disable import/no-extraneous-dependencies
 import { useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchDragons, bookDragon, cancelBooking } from '../../redux/dragons ';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
+import { useDispatch, useSelector } from 'react-redux';
+import { bookDragon, cancelBooking, fetchDragons } from '../../redux/dragons ';
 
 const Dragons = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Dragons = () => {
         id, name, description, images, reserved,
       }) => (
         <Row key={id} className="mb-4">
-          <Col xs={4}>
+          <Col xs={3} className="mb-5">
             <Image src={images[0]} thumbnail />
           </Col>
           <Col>
