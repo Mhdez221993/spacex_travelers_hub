@@ -1,6 +1,6 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-# spacex-travelers-hub
+# Spacex Travelers' Hub
 
 The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
 
