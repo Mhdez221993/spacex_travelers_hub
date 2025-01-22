@@ -1,8 +1,10 @@
 {
-  // Specify the parser
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
   "parser": "babel-eslint",
-  
-  // Specify parser options
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -10,24 +12,15 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  
-  // Extend configurations
-  "extends": ["airbnb", "plugin:react/recommended", "plugin:prettier/recommended"],
-  
-  // Specify plugins
-  "plugins": ["react", "prettier"],
-  
-  // Define custom rules
+  "extends": ["airbnb", "plugin:react/recommended"],
+  "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "arrow-parens": ["error", "as-needed"],
-    "prettier/prettier": ["error", { "singleQuote": true, "trailingComma": "all" }]
+    "arrow-parens": ["error", "as-needed"]
   },
-  
-  // Ignore specific patterns
   "ignorePatterns": [
     "dist/",
     "build/"
