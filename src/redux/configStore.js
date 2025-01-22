@@ -4,17 +4,16 @@ import logger from 'redux-logger';
 import dragons from './dragons ';
 import missions from './missions';
 import rockets from './rockets';
+import { configureStore } from '@reduxjs/toolkit';
 
-const reducer = combineReducers({
-  dragons,
-  missions,
-  rockets,
-  // additional reducers could be added here
+const store = configureStore({
+  reducer: {
+    dragons,
+    missions,
+    rockets,
+    // additional reducers could be added here
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
-
-const store = createStore(
-  reducer,
-  applyMiddleware(thunk, logger),
-);
 
 export default store;
