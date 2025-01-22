@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Mhdez221993.github.io/spacex-travelers-hub/static/css/main.68b67caa.css",
+    "main.js": "/Mhdez221993.github.io/spacex-travelers-hub/static/js/main.99dc3fc4.js",
+    "index.html": "/Mhdez221993.github.io/spacex-travelers-hub/index.html",
+    "main.68b67caa.css.map": "/Mhdez221993.github.io/spacex-travelers-hub/static/css/main.68b67caa.css.map",
+    "main.99dc3fc4.js.map": "/Mhdez221993.github.io/spacex-travelers-hub/static/js/main.99dc3fc4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68b67caa.css",
+    "static/js/main.99dc3fc4.js"
+  ]
+}
