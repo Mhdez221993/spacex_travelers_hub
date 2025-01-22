@@ -1,5 +1,3 @@
-![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Spacex Travelers' Hub
 
 The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
@@ -13,11 +11,11 @@ The Missions section displays a list of current missions along with their brief 
 My Profile
 The My Profile section displays all reserved rockets and space missions.
 
-![screeshoot](./space_traveler1.PNG)
+![screeshoot](screenshot.png)
 
 ## Live Demo
 
-[Go Live](https://magical-taffy-2adbc3.netlify.app/)
+[Go Live](https://mhdez221993.github.io/spacex_travelers_hub/)
 
 ## Built With
 
