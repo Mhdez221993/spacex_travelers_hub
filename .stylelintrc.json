@@ -1,10 +1,26 @@
 {
   "extends": ["stylelint-config-standard"],
+  
   "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
+  
   "rules": {
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
-    "csstree/validator": true
+    
+    "csstree/validator": true,
+    
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "max-nesting-depth": 3,
+    "selector-max-id": 0,
+    "selector-max-class": 3,
+    "selector-max-compound-selectors": 3,
+    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
+    "declaration-no-important": true,
+    "block-no-empty": true,
+    "no-duplicate-selectors": true,
+    "property-no-unknown": [true, { "ignoreProperties": ["composes"] }]
   },
+  
   "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css"]
 }
