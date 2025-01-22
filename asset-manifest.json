@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/spacex_travelers_hub/static/css/main.68b67caa.css",
-    "main.js": "/spacex_travelers_hub/static/js/main.8e4f991c.js",
+    "main.js": "/spacex_travelers_hub/static/js/main.0da2cd75.js",
     "index.html": "/spacex_travelers_hub/index.html",
     "main.68b67caa.css.map": "/spacex_travelers_hub/static/css/main.68b67caa.css.map",
-    "main.8e4f991c.js.map": "/spacex_travelers_hub/static/js/main.8e4f991c.js.map"
+    "main.0da2cd75.js.map": "/spacex_travelers_hub/static/js/main.0da2cd75.js.map"
   },
   "entrypoints": [
     "static/css/main.68b67caa.css",
-    "static/js/main.8e4f991c.js"
+    "static/js/main.0da2cd75.js"
   ]
 }
